@@ -1,0 +1,116 @@
+$primary-color: #4a90e2; // Color principal (azul)
+$background-color: #34495e; // Color de fondo oscuro
+$text-color: #ecf0f1; // Color de texto
+$button-color: #2ecc71; // Color de botón (verde mate más suave)
+$container-background-color: #7f8c8d; // Color de fondo del contenedor (gris mate)
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: $container-background-color; // Color de fondo que combina
+  border-radius: 10px;
+  color: $text-color;
+  font-family: Arial, sans-serif;
+
+  .title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+    text-align: center;
+    color: lighten($text-color, 0.5);
+    margin-bottom: 20px;
+  }
+
+  .chatbox {
+    display: flex;
+    flex-direction: column;
+
+    &__user-list {
+      background-color: rgba(255, 255, 255, 0.1); // Ligera transparencia para la lista
+      padding: 10px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+
+      h2 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+      }
+
+      &--active {
+        padding: 5px;
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.2); // Combina con el diseño original
+        margin: 5px 0;
+      }
+    }
+
+    .messages_list {
+      flex-grow: 1;
+      overflow-y: auto;
+      max-height: 300px;
+      margin-bottom: 20px;
+
+      .chatbox__messages {
+        margin: 5px 0;
+
+        &.mine {
+          background-color: $primary-color; // Color principal para los mensajes propios
+          color: $text-color;
+          border-radius: 10px;
+          padding: 10px;
+        }
+
+        .user-message {
+          .message-box {
+            padding: 10px;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.1); // Ligera transparencia para mensajes
+            margin: 5px 0;
+
+            .name {
+              font-weight: bold;
+              margin-bottom: 5px;
+            }
+
+            .message {
+              font-size: 1rem;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .send-message {
+    display: flex;
+    align-items: center;
+
+    input {
+      flex-grow: 1;
+      padding: 10px;
+      border: 1px solid $primary-color; // Borde en color primario
+      border-radius: 5px;
+      margin-right: 10px;
+      color: $text-color;
+      background-color: rgba(255, 255, 255, 0.1); // Ligera transparencia en el fondo
+    }
+
+    button {
+      padding: 10px 15px;
+      background-color: $button-color; // Color del botón (verde mate más suave)
+      border: none;
+      border-radius: 5px;
+      color: white;
+      cursor: pointer;
+
+      &:hover {
+        background-color: darken($button-color, 10%); // Oscurecer en hover
+      }
+    }
+  }
+}
