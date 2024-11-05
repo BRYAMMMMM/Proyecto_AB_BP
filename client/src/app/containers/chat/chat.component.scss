@@ -1,84 +1,81 @@
-$primary-color: #4a90e2; // Color principal (azul)
-$background-color: #34495e; // Color de fondo oscuro
-$text-color: #ecf0f1; // Color de texto
-$button-color: #2ecc71; // Color de botón (verde mate más suave)
-$container-background-color: #7f8c8d; // Color de fondo del contenedor (gris mate)
+$primary-color: #4a90e2;
+$background-color: #34495e;
+$text-color: #ecf0f1;
+$button-color: #2ecc71;
+$container-background-color: #7f8c8d;
+$name-color: #e74c3c; // Rojo para el nombre del usuario
 
 .container {
-  max-width: 800px;
+  max-width: 1200px; 
   margin: 0 auto;
-  padding: 20px;
-  background-color: $container-background-color; // Color de fondo que combina
+  padding: 30px;
+  background-color: $container-background-color;
   border-radius: 10px;
   color: $text-color;
   font-family: Arial, sans-serif;
-
-  .title {
-    font-size: 2.5rem;
-    text-align: center;
-    margin-bottom: 10px;
-  }
-
-  .subtitle {
-    font-size: 1.2rem;
-    text-align: center;
-    color: lighten($text-color, 0.5);
-    margin-bottom: 20px;
-  }
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 
   .chatbox {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
 
     &__user-list {
-      background-color: rgba(255, 255, 255, 0.1); // Ligera transparencia para la lista
-      padding: 10px;
+      width: 30%;
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 15px;
       border-radius: 5px;
-      margin-bottom: 20px;
+      overflow-y: auto;
+      max-height: 600px;
 
       h2 {
-        font-size: 1.5rem;
-        margin-bottom: 10px;
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+        text-align: center;
       }
 
       &--active {
-        padding: 5px;
+        padding: 10px;
         border-radius: 5px;
-        background-color: rgba(255, 255, 255, 0.2); // Combina con el diseño original
-        margin: 5px 0;
+        background-color: rgba(255, 255, 255, 0.2);
+        margin: 10px 0;
       }
     }
 
     .messages_list {
+      width: 65%;
       flex-grow: 1;
       overflow-y: auto;
-      max-height: 300px;
-      margin-bottom: 20px;
+      max-height: 600px;
+      padding: 15px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 5px;
 
       .chatbox__messages {
-        margin: 5px 0;
+        margin: 15px 0;
+        padding: 15px;
+        border-radius: 10px;
+        background-color: rgba(255, 255, 255, 0.2);
 
         &.mine {
-          background-color: $primary-color; // Color principal para los mensajes propios
+          background-color: $primary-color;
           color: $text-color;
-          border-radius: 10px;
-          padding: 10px;
+          text-align: right;
         }
 
         .user-message {
           .message-box {
-            padding: 10px;
-            border-radius: 5px;
-            background-color: rgba(255, 255, 255, 0.1); // Ligera transparencia para mensajes
-            margin: 5px 0;
-
             .name {
               font-weight: bold;
               margin-bottom: 5px;
+              color: $name-color; // Rojo para el nombre del usuario
             }
 
             .message {
               font-size: 1rem;
+              color: $text-color; // Asegúrate de usar un color visible
+              margin-top: 5px; // Espaciado para separar el mensaje del nombre
             }
           }
         }
@@ -89,27 +86,28 @@ $container-background-color: #7f8c8d; // Color de fondo del contenedor (gris mat
   .send-message {
     display: flex;
     align-items: center;
+    margin-top: 30px;
 
     input {
       flex-grow: 1;
-      padding: 10px;
-      border: 1px solid $primary-color; // Borde en color primario
+      padding: 15px;
+      border: 1px solid $primary-color;
       border-radius: 5px;
-      margin-right: 10px;
+      margin-right: 15px;
       color: $text-color;
-      background-color: rgba(255, 255, 255, 0.1); // Ligera transparencia en el fondo
+      background-color: rgba(255, 255, 255, 0.1);
     }
 
     button {
-      padding: 10px 15px;
-      background-color: $button-color; // Color del botón (verde mate más suave)
+      padding: 15px 20px;
+      background-color: $button-color;
       border: none;
       border-radius: 5px;
       color: white;
       cursor: pointer;
 
       &:hover {
-        background-color: darken($button-color, 10%); // Oscurecer en hover
+        background-color: darken($button-color, 10%);
       }
     }
   }

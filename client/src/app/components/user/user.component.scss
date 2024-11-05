@@ -1,0 +1,48 @@
+$input-border-color: #bdc3c7;
+$button-bg-color: #3498db;
+$button-hover-color: darken($button-bg-color, 10%);
+$input-bg-color: rgba(255, 255, 255, 0.1);
+$input-text-color: #ecf0f1;
+
+.set-username-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px;
+  background-color: black;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  input {
+    padding: 10px;
+    border: 1px solid $input-border-color;
+    border-radius: 5px;
+    background-color: $input-bg-color;
+    color: $input-text-color;
+    font-size: 1rem;
+    flex-grow: 1;
+    max-width: 300px;
+    outline: none;
+
+    &::placeholder {
+      color: lighten($input-text-color, 20%);
+    }
+  }
+
+  button {
+    padding: 10px 15px;
+    background-color: $button-bg-color;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: $button-hover-color;
+    }
+  }
+}
